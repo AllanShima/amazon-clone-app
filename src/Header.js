@@ -25,7 +25,7 @@ function Header() {
         </div>
         
         {/* Option 2 */}
-        <div className='header__option2'>
+        <div className='header__option'>
         <span className='header__optionLineOne'>
             Returns
           </span>
@@ -35,7 +35,7 @@ function Header() {
         </div>
 
         {/* Option 3 */}
-        <div className='header__option3'>
+        <div className='header__option'>
         <span className='header__optionLineOne'>
             Your
           </span>
