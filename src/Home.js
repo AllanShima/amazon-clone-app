@@ -1,13 +1,31 @@
 import React from 'react'
 import "./Home.css"
+import Product from "./Product"
 
 function Home() {
   return (
     <div className='home'>
         {/* BEM Convention */}
+
       <div className='home__container'>
-        <video src='https://m.media-amazon.com/images/I/A1QjE1HXwoL.mp4' autoPlay="true"/>
+        <img className="home__image" src="https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg" alt='Books'/>
       </div>
+
+      <div className='home__row'>
+        <Product/>
+        {/* Product */}
+      </div>
+
+      <div className='home__row'>
+        {/* Product */}
+        {/* Product */}
+        {/* Product */}
+      </div>
+
+      <div className='home__row'>
+        {/* Product */}
+      </div>
+      
     </div>
   )
 }

@@ -8,6 +8,7 @@ function App() {
     // BEM Convention CSS Style
     <div className="App">
       <Header/>
+      {/* Header */}
       <Home />
       {/* Home */}
 

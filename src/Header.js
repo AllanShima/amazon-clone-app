@@ -1,13 +1,16 @@
 import React from 'react'
 import './Header.css'
+
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 function Header() {
   return (
     <div className='header'>
+      {/* Amazon Logo */}
       <img className='header__logo' src="https://m.media-amazon.com/images/G/01/gno/images/general/backup-logo_blue_2x._CB481604563_.png" alt='amazon-logo'/>
       
+      {/* White search bar */}
       <div className="header__search">
         <input className='header__searchInput' type='text'/>
         {/* Logo */}
@@ -27,7 +30,7 @@ function Header() {
         
         {/* Option 2 */}
         <div className='header__option'>
-        <span className='header__optionLineOne'>
+          <span className='header__optionLineOne'>
             Returns
           </span>
           <span className='header__optionLineTwo'>
