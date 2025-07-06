@@ -1,4 +1,4 @@
-.product {
+ .product {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,6 +9,10 @@
     background-color: white;
     z-index: 1;/* Stick to to the top*/
 
+}
+
+.product__rating {
+    display: flex;
 }
 
 .product > img {
@@ -27,6 +31,10 @@
 
 .product__price {
     margin-top: 5px;
+}
+
+.product__info {
+    text-align: left;
 }
 
 .product__info {
