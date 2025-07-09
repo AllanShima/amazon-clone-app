@@ -30,3 +30,13 @@ Notes:
 
 Stuff:
 - BEM Convention?
+- Props in React
+- React Router DOM
+
+### Libraries and Components
+- Material UI
+- React JS
+- React Router DOM
+- React currency format = "npm i react-number-format"
+
+- React Contect API / REDUX
