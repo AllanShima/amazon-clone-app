@@ -39,4 +39,10 @@ Stuff:
 - React Router DOM
 - React currency format = "npm i react-number-format"
 
-- React Contect API / REDUX
+- React Context API / REDUX (The data layer)
+
+Data Layer: Its an important layer for our frontend so that every component can have access to the data (putting data in & out)
+
+Initial State: How the data layer look in the beginning;
+Reducer: How we manipulate with the data layer.
+	- How we put and pull the data from the data layer.
