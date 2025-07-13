@@ -8,11 +8,17 @@
     background-color: #f3f3f3;
     border: 1px solid #dddddd;
     border-radius: 3px;
+    
+}
+
+.subtotal > p {
+    font-weight: normal;
 }
 
 .subtotal__gift {
     display: flex;
     align-items: center;
+    font-weight: normal;
 }
 
 .subtotal__gift > input {

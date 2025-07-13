@@ -27,11 +27,16 @@ Notes:
 	- Building the Home Component (Home js and css)
 	- PS: Installed the ES7 React Extension for the "rfce" (to render a default layout for every component)
 	- PS: Installed Material UI icons
+- Checkout
+	- Subtotal
+		- useContext/Context API
+
 
 Stuff:
 - BEM Convention?
 - Props in React
 - React Router DOM
+- Optional Chaining
 
 ### Libraries and Components
 - Material UI

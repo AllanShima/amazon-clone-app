@@ -1,8 +1,14 @@
 import React from 'react'
 import "./Subtotal.css"
 import { NumericFormat } from "react-number-format"
+import { useStateValue } from './StateProvider'
 
 function Subtotal() {
+
+  const [{ basket }, dispatch] = useStateValue();
+
+  const totalPrice = basket.reduce((accumulator, currentItem) => accumulator + currentItem?.price, 0);
+
   return (
     <div className='subtotal'>
       <NumericFormat
@@ -10,15 +16,16 @@ function Subtotal() {
             <>
                 <p>
                     {/* Also part of the homework */}
-                    Subtotal ({value} items): <strong>0</strong>
+                    Subtotal ({basket.length} items): <strong>{value}</strong>
                 </p>
-                <small className='subtotal__gift'>
-                    <input type='checkbox'/> This order contains a gift
+                <small className='subtotal__gift' style="font-size:10vw">
+                    <input type='checkbox'/> 
+                    This order contains a gift
                 </small>
             </>
         )}
         decimalScale={2}
-        value={0} // part of the homework
+        value={totalPrice} // part of the homework
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}
