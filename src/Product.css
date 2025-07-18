@@ -8,7 +8,6 @@
     width: 100%;
     background-color: white;
     z-index: 1;/* Stick to to the top*/
-
 }
 
 .product__rating {
@@ -35,9 +34,6 @@
 
 .product__info {
     text-align: left;
-}
-
-.product__info {
     height: 100px;
     margin-bottom: 15px;
 }

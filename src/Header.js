@@ -25,14 +25,18 @@ function Header() {
 
       {/* Option 1 */}
       <div className='header__nav'>
-        <div className='header__option'>
-          <span className='header__optionLineOne'>
-            Hello Guest
-          </span>
-          <span className='header__optionLineTwo'>
-            Sign In
-          </span>
-        </div>
+        <Link to='/login'>
+          <div className='header__option'>
+              <span className='header__optionLineOne'>
+                Hello Guest
+              </span>
+              <span className='header__optionLineTwo'>
+                Sign In
+              </span>    
+          </div>
+        </Link>
+
+        
         
         {/* Option 2 */}
         <div className='header__option'>

@@ -30,13 +30,24 @@ Notes:
 - Checkout
 	- Subtotal
 		- useContext/Context API
-
+	- CheckoutProduct
+- Login page
+- Firebase setup (technically it shouldve chronologically been created here)
+	- npm install firebase (installing firebase into the project)
+	- (had an error here from installing firebase and had to reinstall all the dependencies. Had to update the firebase.js to a new version v9 syntax that uses modular imports [as mentioned in firebase site])
 
 Stuff:
 - BEM Convention?
 - Props in React
 - React Router DOM
 - Optional Chaining
+- Selectors
+- BEM and SASS
+
+- Hard Coded vs Dynamic
+- Flexbox
+- React's state management
+	- State variables
 
 ### Libraries and Components
 - Material UI
