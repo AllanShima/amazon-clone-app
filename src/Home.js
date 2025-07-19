@@ -8,7 +8,7 @@ function Home() {
         {/* BEM Convention */}
 
       <div className='home__container'>
-        <img className="home__image" src="https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg" alt='Books'/>
+        <img className="home__image" src="https://m.media-amazon.com/images/I/619geyiQI5L._SX3000_.jpg" alt='Kitchen Essentials Category'/>
 
         <div className='home__row'>
           <Product 

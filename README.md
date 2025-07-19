@@ -35,6 +35,15 @@ Notes:
 - Firebase setup (technically it shouldve chronologically been created here)
 	- npm install firebase (installing firebase into the project)
 	- (had an error here from installing firebase and had to reinstall all the dependencies. Had to update the firebase.js to a new version v9 syntax that uses modular imports [as mentioned in firebase site])
+- Deploying the app 
+	- 'npm i -g firebase-tools' (had to add a new variable into path system)
+	- 'firebase login'
+	- 'firebase init'
+	- 'npm run build'
+	- 'firebase deploy'
+- (Homework) Styling the app to my preferences
+	- Installing the flip move animation - npm i -S react-flip-move
+
 
 Stuff:
 - BEM Convention?
@@ -43,6 +52,10 @@ Stuff:
 - Optional Chaining
 - Selectors
 - BEM and SASS
+
+- Had to downgrade react router to v6
+npm install react-router-dom@6.22.1
+
 
 - Hard Coded vs Dynamic
 - Flexbox

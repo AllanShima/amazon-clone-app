@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from "./firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import userEvent from '@testing-library/user-event';
 
 function Login() {
+    const navigate = useNavigate(); // Allows to 'programically' change the url - changed from useHistory
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -12,6 +14,12 @@ function Login() {
         e.preventDefault()
 
         // fancy firebase login
+        signInWithEmailAndPassword(auth, email, password)
+        .then((auth) => {
+            // successfully logged in
+            navigate('/')
+        })
+        .catch(error => alert(error.message))
     }
 
     const register = e => {
@@ -22,6 +30,9 @@ function Login() {
         .then((auth) => {
             // successfully created a new user with email and password
             console.log(auth);
+            if (auth) {
+                navigate('/')
+            }
         })
         .catch(error => alert(error.message))
     }
