@@ -1,0 +1,91 @@
+.footer {
+    width: 100%;
+}
+
+.footerSpacer {
+    height: 40px;
+}
+
+.backToTop {
+    width: 100%;
+    height: 49px;
+    border: none;
+    background: #37475A;
+    color: white;
+}
+
+.backToTop:hover {
+    background: #485769;
+}
+
+.navFooter {
+    display: table;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    background: #232F3E;
+}
+
+.navFooter__textContainer {
+    display: flex;
+    padding: 3% 0;
+}
+
+.navFooter__list {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+hr {
+    border: 0.01px solid #37475A;
+    height: 0;
+}
+
+.navFooter__amazon {
+    display: flex;
+}
+
+.navFooter__amazonOptions {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 10px;
+}
+
+.navFooter__languageLinks {
+    display: flex;
+}
+
+.navFooter__languageLinks > button {
+    width: 20vh;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: none;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    color:  whitesmoke;
+    text-align: left;
+}
+
+.navFooter__languageLinks > button:hover {
+    cursor: pointer;
+}
+
+.footer__logo {
+    width: 76px;
+    height: 27px;
+    margin-right: 15%;
+}
+
+.navFooterMore {
+    height: fit-content;
+    background: #131A22;
+}
+
+.navFooterMore__endLine {
+    background: #131A22;
+}

@@ -20,7 +20,9 @@ function Header() {
     <div className='header'>
       {/* Amazon Logo */}
       <Link to="/">
-        <img className='header__logo' src="https://m.media-amazon.com/images/G/01/gno/images/general/backup-logo_blue_2x._CB481604563_.png" alt='amazon-logo'/>
+        <div className='header__logo'>
+          <img className='header__logoImage' src="https://m.media-amazon.com/images/G/01/gno/images/general/backup-logo_blue_2x._CB481604563_.png" alt='amazon-logo'/>        
+        </div>
       </Link>
     
       {/* White search bar */}
@@ -43,8 +45,6 @@ function Header() {
           </div>
         </Link>
 
-        
-        
         {/* Option 2 */}
         <div className='header__option'>
           <span className='header__optionLineOne'>

@@ -9,30 +9,49 @@
 }
 
 .header__logo {
+    margin: 0 20px;
+}
+
+.header__logoImage {
     width: 120px;
     object-fit: contain;
-    margin: 0 20px;
-    margin-top: 18px;
+    margin-top: 10px;
 }
 
 .header__search {
     display: flex;
     flex: 1;
     align-items: center;
-    border-radius: 24px;
+    border-radius: 50px;
+}
+
+/* Header Search focus effect */
+.header__search:focus-within {
+    box-shadow: 0 0 0 3px #FF9900;
+    border-radius: 2px;
 }
 
 .header__searchInput {
     height: 12px;
     padding: 10px;
-    border: none;
     width: 100%;
+    border: none;
+    outline: none;
+
+    border-radius: 2px 0 0 2px;
 }
  
 .header__searchIcon {
     padding: 5px;
     height: 22px !important;
-    background-color: #cd9042;
+    background-color: #F3A847;
+
+    border-radius: 0 2px 2px 0;
+}
+
+.header__searchIcon:hover {
+    cursor: pointer;
+    background-color: #FF9900;
 }
 
 .header__optionLineOne {
@@ -48,16 +67,23 @@
     display: flex;
     align-items: center;
     color: white;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.header__optionBasket:hover {
+    outline: 1px solid white; /* Doesn't affect layout */
+    border-radius: 2px;  
 }
 
 .header__basketCount {
     margin-left: 10px;
-    margin-right: 10px;
 }
 
 .header__nav {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .header__option {
@@ -66,4 +92,20 @@
     margin-left: 10px;
     margin-right: 10px;
     color: white;
+    padding: 8px;
+}
+
+.header__option:hover {
+    outline: 1px solid white; /* Doesn't affect layout */
+    border-radius: 2px;    
+}
+
+.header__logo:hover {
+    outline: 1px solid white; /* Doesn't affect layout */
+    border-radius: 2px;    
+}
+
+/* Remove underline from all Link components in header */
+.header__nav a {
+  text-decoration: none;
 }

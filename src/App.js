@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { auth } from './firebase'; 
 import { useStateValue } from './StateProvider';
 import { useEffect } from 'react';
+import Footer from './Footer';
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -58,6 +59,7 @@ function App() {
             </>
           } />
         </Routes>
+        <Footer/>
       </div>      
     </Router>
   );

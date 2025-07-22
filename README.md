@@ -75,3 +75,9 @@ Data Layer: Its an important layer for our frontend so that every component can 
 Initial State: How the data layer look in the beginning;
 Reducer: How we manipulate with the data layer.
 	- How we put and pull the data from the data layer.
+
+---
+
+Deployed website: https://clone-a3fa0.web.app/
+
+	- Make sure to build after updates
