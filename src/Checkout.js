@@ -12,6 +12,7 @@ function Checkout() {
 
   return (
     <div className='checkout'>
+      <div className='checkout__spacer'></div>
       <div className='checkout__left'>
         <img className='checkout__ad' src='https://m.media-amazon.com/images/I/11RNLXhvOXL.jpg' alt='Advertisement banner'/>
         
@@ -30,6 +31,7 @@ function Checkout() {
                     image={item.image}
                     price={item.price}
                     rating={item.rating}
+                    amount={item.amount}
                   />                    
                 </div>
               ))}                  

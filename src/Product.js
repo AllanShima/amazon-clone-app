@@ -2,13 +2,17 @@ import React from 'react'
 import "./Product.css"
 import { useStateValue } from './StateProvider';
 
-function Product({ id, title, image, price, rating }) {
-  const [{ basket }, dispatch] = useStateValue(); // array destructuring
+function Product({ id, title, image, price, rating, amount }) {
+  const [{ basket, user }, dispatch] = useStateValue(); // array destructuring
 
   // console.log("This is the basket: ", basket);
 
+  // This is calculated directly in the render or when needed, ensuring it's always up-to-date
+  const currentProductInBasket = basket.find(item => item.id === id);
+  const quantityInBasket = currentProductInBasket?.amount || 0;
+
   const addToBasket = () => {
-    // dispatch the item into the data layer
+    // dispatch the item onto the data layer
     dispatch({
       type: 'ADD_TO_BASKET',
       item: {
@@ -17,6 +21,7 @@ function Product({ id, title, image, price, rating }) {
         image: image,
         price: price,
         rating: rating,
+        amount: quantityInBasket + 1,
       },
     });
   };
@@ -31,19 +36,14 @@ function Product({ id, title, image, price, rating }) {
             <strong>{price}</strong>
         </p>
         <div className='product__rating'>
-          {Array(rating).fill().map((_, i) => (<p>🌟</p>))}
-          
+          {Array(rating).fill().map((_, i) => (<p key={i}>🌟</p>))}
         </div>
       </div>
       
       <img src={image} alt=""></img>
         
       <button onClick={addToBasket}>Add to Basket</button>
-
-      {/* Proce tag */}
-      {/* Star rating */}
-      {/* Image */}
-      {/* Add to basket button */}
+      {quantityInBasket > 0 && <p>Quantity in basket: {quantityInBasket}</p>}
     </div>
   )
 }

@@ -5,13 +5,24 @@ import { useStateValue } from './StateProvider';
 function CheckoutProduct({ id, image, title, price, rating}) {
     const [{ basket }, dispatch] = useStateValue(); // array destructuring
 
+    const currentProductInBasket = basket.find(item => item.id === id);
+    const quantityInBasket = currentProductInBasket?.amount || 0;
+
     const removeFromBasket = () => {
-        // Remove the item from the basket
-        dispatch({
-        type: 'REMOVE_FROM_BASKET',
-        id: id,
-        });
-    }
+        if (quantityInBasket > 1) {
+            // If quantity is more than 1, decrement it
+            dispatch({
+                type: 'DECREMENT_ITEM_QUANTITY', // New action type
+                id: id,
+            });
+        } else {
+            // If quantity is 1 or less, remove the item completely
+            dispatch({
+                type: 'REMOVE_FROM_BASKET', // Existing action type
+                id: id,
+            });
+        }
+    };
 
     return (
         <div className='checkoutProduct'>
@@ -32,6 +43,7 @@ function CheckoutProduct({ id, image, title, price, rating}) {
                     ))}
                 </div>
                 <button onClick={removeFromBasket}>Remove from Basket</button>
+                <p>Quantity in basket: {quantityInBasket}</p>
             </div>
         </div>
     )

@@ -43,6 +43,13 @@ Notes:
 	- 'firebase deploy'
 - (Homework) Styling the app to my preferences
 	- Installing the flip move animation - npm i -S react-flip-move
+	- Item Quantity;
+	- Footer
+	- Home styling
+- Payment page
+	- Styling and reusing the checkoutProducts
+- Payment Processing (Part 8)
+	
 
 
 Stuff:
@@ -52,6 +59,8 @@ Stuff:
 - Optional Chaining
 - Selectors
 - BEM and SASS
+- Renderização condicional: Em vez de manipular o DOM diretamente com style.display, uso renderização condicional no JSX.
+
 
 - Had to downgrade react router to v6
 npm install react-router-dom@6.22.1
@@ -76,8 +85,21 @@ Initial State: How the data layer look in the beginning;
 Reducer: How we manipulate with the data layer.
 	- How we put and pull the data from the data layer.
 
+It was used the MERN Stack frameworks to build the whole full stack project
+- MongoDB;
+- Express JS;
+- React JS;
+- Node JS.
+
+(There are differences between MERN, MEAN and MEVN)
+
+This stack allows developers to use JavaScript for both the front-end (user interface) and back-end (server-side logic and database interaction), streamlining development and enabling the creation of dynamic, data-driven applications. 
+
+
+Saas - Software as a Service
 ---
 
 Deployed website: https://clone-a3fa0.web.app/
 
-	- Make sure to build after updates
+	- Make sure to build after updates ('npm run build')
+	- And deploy ('firebase deploy')
