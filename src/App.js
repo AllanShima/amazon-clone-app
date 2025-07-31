@@ -10,6 +10,12 @@ import { useStateValue } from './StateProvider';
 import { useEffect } from 'react';
 import Footer from './Footer';
 
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+// API Public key (no need to hide)
+const promise = loadStripe('pk_test_51RqRudRsy1KxECrWlQRFELVpk6S4z911H9boMiqoFM2lFlxLAHHrzW7y5vQR7GA4NtAbtpg24tz63ykfTLzQ9h6F00mN1oXMdt')
+
 function App() {
   const [{}, dispatch] = useStateValue();
 
@@ -54,7 +60,9 @@ function App() {
           <Route path="/payment" element={
             <>
               <Header/>
-              <Payment/>
+              <Elements stripe={promise}>
+                <Payment/>
+              </Elements>
             </>
           } />
 
