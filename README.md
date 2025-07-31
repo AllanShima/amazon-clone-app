@@ -14,43 +14,63 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
----
+-----------------------------------------------------
 
-Notes:
+Progress notes:
 
 - firebase Setup;
+
 - installing the react template;
+
 - copy/paste snippets from firebase (firebase.js)
+
 - Homepage
 	- Deleting the default html and css settings;
 	- Building the Header Component (Header js and css);
 	- Building the Home Component (Home js and css)
 	- PS: Installed the ES7 React Extension for the "rfce" (to render a default layout for every component)
 	- PS: Installed Material UI icons
+
 - Checkout
 	- Subtotal
 		- useContext/Context API
 	- CheckoutProduct
+
 - Login page
+
 - Firebase setup (technically it shouldve chronologically been created here)
 	- npm install firebase (installing firebase into the project)
 	- (had an error here from installing firebase and had to reinstall all the dependencies. Had to update the firebase.js to a new version v9 syntax that uses modular imports [as mentioned in firebase site])
+
 - Deploying the app 
 	- 'npm i -g firebase-tools' (had to add a new variable into path system)
 	- 'firebase login'
 	- 'firebase init'
 	- 'npm run build'
 	- 'firebase deploy'
+
 - (Homework) Styling the app to my preferences
 	- Installing the flip move animation - npm i -S react-flip-move
 	- Item Quantity;
 	- Footer
 	- Home styling
+
 - Payment page
 	- Styling and reusing the checkoutProducts
-- Payment Processing (Part 8)
-	
 
+- Payment Processing (Part 8)
+	- Stripe setup
+		- npm install @stripe/stripe-js
+		- npm install @stripe/react-stripe-js
+		- Upgrading the firebase's plan to blaze
+		- Creating a Stripe account and getting the api publishable key (stripe.com)
+	- CardElement code;
+	- Installing axios (npm install axios): popular fetching library. Its more easier than js fetch api
+	- Cloud Functions ()
+		- firebase init -> Functions -> Js -> Eslint (yes) -> dependencies (yes)
+		- 
+
+-----------------------------------------------------
 
 Stuff:
 - BEM Convention?
@@ -60,7 +80,8 @@ Stuff:
 - Selectors
 - BEM and SASS
 - Renderização condicional: Em vez de manipular o DOM diretamente com style.display, uso renderização condicional no JSX.
-
+- Hooks???
+- Next project try to use Paypal instead of stripe.
 
 - Had to downgrade react router to v6
 npm install react-router-dom@6.22.1
@@ -97,6 +118,13 @@ This stack allows developers to use JavaScript for both the front-end (user inte
 
 
 Saas - Software as a Service
+
+---
+
+Hirearchy:
+- src folder = app (front-end)
+- functions folder = full back-end (cloud functions)
+
 ---
 
 Deployed website: https://clone-a3fa0.web.app/
