@@ -564,3 +564,19 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [warn] !  functions: Your requested "node" version "22" doesn't match your global version "20". Using node@20 from host. 
 [debug] [2025-08-01T05:59:49.666Z] Could not find functions.yaml. Must use http discovery
 [debug] [2025-08-01T05:59:49.686Z] Found firebase-functions binary at 'C:\Users\allan\Desktop\Projetos VSCODE\Full-stack\amazon-clone-app\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8692
+
+[error] Error: Neither apiKey nor config.authenticator provided
+    at Stripe._setAuthenticator (C:\Users\allan\Desktop\Projetos VSCODE\Full-stack\amazon-clone-app\functions\node_modules\stripe\cjs\stripe.core.js:156:23)
+    at new Stripe (C:\Users\allan\Desktop\Projetos VSCODE\Full-stack\amazon-clone-app\functions\node_modules\stripe\cjs\stripe.core.js:94:14)
+    at Stripe (C:\Users\allan\Desktop\Projetos VSCODE\Full-stack\amazon-clone-app\functions\node_modules\stripe\cjs\stripe.core.js:50:20)
+    at Object.<anonymous> (C:\Users\allan\Desktop\Projetos VSCODE\Full-stack\amazon-clone-app\functions\index.js:17:33)
+    at Module._compile (node:internal/modules/cjs/loader:1469:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+    at Module.load (node:internal/modules/cjs/loader:1288:32)
+    at Module._load (node:internal/modules/cjs/loader:1104:12)
+    at Module.require (node:internal/modules/cjs/loader:1311:19)
+    at require (node:internal/modules/helpers:179:18)
+
+[debug] [2025-08-01T05:59:51.807Z] Got response code 400; body Failed to generate manifest from function source: Neither apiKey nor config.authenticator provided
+[error] !!  functions: Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: Functions codebase could not be analyzed successfully. It may have a syntax or runtime error"}}
