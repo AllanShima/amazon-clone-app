@@ -8,13 +8,14 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { getBasketTotal } from "./reducer";
 import { NumericFormat } from 'react-number-format';
 
-import axios from '/axios';
+import axios from './axios';
 
 function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
-    const nagivate = useNavigate();
 
-    const Stripe = useStripe();
+    const navigate = useNavigate();
+
+    const stripe = useStripe();
     const elements = useElements();
 
     const [succeeded, setSucceeded] = useState(false);
@@ -24,20 +25,26 @@ function Payment() {
 
     const [clientSecret, setClientSecret] = useState(true);
 
-    useEffect(() => {
-        // generate the special stripe secret which allows us to charge a customer
-
-        const getClientSecret = async () => {
+useEffect(() => {
+    // generate the special stripe secret which allows us to charge a customer
+    const getClientSecret = async () => {
+        const total = getBasketTotal(basket) * 100;
+        if (total > 0) {
             const response = await axios({
                 method: 'post',
-                // Stripe exprects the total in a currencies subunits
-                url: `/payments/create?total=${getBasketTotal(basket) * 100}`
+                url: '/payments/create',
+                params: {
+                    total: total
+                }
             });
             setClientSecret(response.data.clientSecret);
         }
+    };
 
-        getClientSecret();
-    }, [basket])
+    getClientSecret();
+}, [basket]);
+
+    console.log('The secret is >>> ', clientSecret);
 
     const handleSubmit = async event => {
         // processes the payment by sending the card details to Stripe's API
@@ -56,7 +63,7 @@ function Payment() {
             setError(null)
             setProcessing(false)
 
-            navigate.replaceState('/orders') // swapping the page instead of coming back to /payment
+            navigate('/orders', { replace: true }); // swapping the page instead of coming back to /payment
         })
     }
 

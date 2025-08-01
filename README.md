@@ -66,9 +66,14 @@ Progress notes:
 		- Creating a Stripe account and getting the api publishable key (stripe.com)
 	- CardElement code;
 	- Installing axios (npm install axios): popular fetching library. Its more easier than js fetch api
-	- Cloud Functions ()
+	- Backend Cloud Functions ()
 		- firebase init -> Functions -> Js -> Eslint (yes) -> dependencies (yes)
-		- 
+		- cd functions
+		- npm install express
+		- index.js
+		- npm install cors
+		- npm install stripe
+		- firebase emulators:start
 
 -----------------------------------------------------
 
@@ -122,12 +127,16 @@ Saas - Software as a Service
 ---
 
 Hirearchy:
-- src folder = app (front-end)
+- src folder = app (front-end) = It has its own node modules, package.json and index (liek another project)
 - functions folder = full back-end (cloud functions)
 
 ---
+
+Stripe API Keys: https://dashboard.stripe.com/test/apikeys
 
 Deployed website: https://clone-a3fa0.web.app/
 
 	- Make sure to build after updates ('npm run build')
 	- And deploy ('firebase deploy')
+
+If you want to use real payments, just go to stripe and disable the test option. And replace the api keys with the new live one provided. (PS: Dont do this)
