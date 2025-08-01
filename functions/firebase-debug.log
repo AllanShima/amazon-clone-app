@@ -528,3 +528,39 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2025-08-01T05:27:03.629Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
 [debug] [2025-08-01T05:27:03.629Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
 [debug] [2025-08-01T05:27:03.629Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-08-01T05:59:45.654Z] File C:\Users\allan\Desktop\Projetos VSCODE\Full-stack\amazon-clone-app\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\allan\\Desktop\\Projetos VSCODE\\Full-stack\\amazon-clone-app\\functions\\index.js changed, reloading triggers"}}
+[debug] [2025-08-01T05:59:46.738Z] Validating nodejs source
+[debug] [2025-08-01T05:59:49.640Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "stripe": "^18.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-08-01T05:59:49.642Z] Building nodejs source
+[debug] [2025-08-01T05:59:49.643Z] Failed to find version of module node: reached end of search path C:\Users\allan\Desktop\Projetos VSCODE\Full-stack\amazon-clone-app\functions\node_modules
+[warn] !  functions: Your requested "node" version "22" doesn't match your global version "20". Using node@20 from host. 
+[debug] [2025-08-01T05:59:49.666Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-08-01T05:59:49.686Z] Found firebase-functions binary at 'C:\Users\allan\Desktop\Projetos VSCODE\Full-stack\amazon-clone-app\functions\node_modules\.bin\firebase-functions'
