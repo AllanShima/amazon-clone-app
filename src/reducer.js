@@ -50,7 +50,13 @@ const reducer = (state, action) => {
                 basket: [...state.basket, action.item], // Add the new item
                 };
             }
-            
+        
+        case 'EMPTY_BASKET':
+            return {
+                ...state,
+                basket: []
+            }
+
         case 'DECREMENT_ITEM_QUANTITY':
             const existingDecrementIndex = state.basket.findIndex(item => item.id === action.id);
 

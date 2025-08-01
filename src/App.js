@@ -4,12 +4,12 @@ import Home from './Home';
 import Login from './Login';
 import Checkout from './Checkout';
 import Payment from './Payment';
+import Orders from './Orders';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { auth } from './firebase'; 
 import { useStateValue } from './StateProvider';
 import { useEffect } from 'react';
 import Footer from './Footer';
-
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
@@ -46,6 +46,11 @@ function App() {
     <Router>
       <div className="App">           {/* BEM Convention */}
         <Routes>
+          <Route path="/orders" element={
+            <>
+              <Orders/>
+            </>
+          } />
           <Route path="/login" element={
             <>
               <Login/>

@@ -74,6 +74,8 @@ Progress notes:
 		- npm install cors
 		- npm install stripe
 		- firebase emulators:start
+- Firebase Database setup
+	- 
 
 -----------------------------------------------------
 

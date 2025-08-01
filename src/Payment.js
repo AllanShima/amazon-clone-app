@@ -63,6 +63,10 @@ useEffect(() => {
             setError(null)
             setProcessing(false)
 
+            dispatch({
+                type: 'EMPTY_BASKET'
+            })
+
             navigate('/orders', { replace: true }); // swapping the page instead of coming back to /payment
         })
     }
