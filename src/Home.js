@@ -59,7 +59,8 @@ function Home() {
           title='The Lean Startup' 
           price={29.99} 
           image="https://m.media-amazon.com/images/I/71sxTeZIi6L.jpg" 
-          rating={5}/>
+          rating={5}
+          quantity={0}/>
 
           <Product 
           id="123"

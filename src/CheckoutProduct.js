@@ -2,21 +2,20 @@ import React from 'react';
 import './CheckoutProduct.css';
 import { useStateValue } from './StateProvider';
 
-function CheckoutProduct({ id, image, title, price, rating}) {
+function CheckoutProduct({ id, image, title, price, rating, amount, hideButton }) {
     const [{ basket }, dispatch] = useStateValue(); // array destructuring
 
-    const currentProductInBasket = basket.find(item => item.id === id);
-    const quantityInBasket = currentProductInBasket?.amount || 0;
+    const quantityInBasket = amount; // Use the amount prop directly
 
     const removeFromBasket = () => {
         if (quantityInBasket > 1) {
-            // If quantity is more than 1, decrement it
+            // If amount is more than 1, decrement it
             dispatch({
                 type: 'DECREMENT_ITEM_QUANTITY', // New action type
                 id: id,
             });
         } else {
-            // If quantity is 1 or less, remove the item completely
+            // If amount is 1 or less, remove the item completely
             dispatch({
                 type: 'REMOVE_FROM_BASKET', // Existing action type
                 id: id,
@@ -42,7 +41,9 @@ function CheckoutProduct({ id, image, title, price, rating}) {
                         <p>🌟</p>
                     ))}
                 </div>
-                <button onClick={removeFromBasket}>Remove from Basket</button>
+                {!hideButton && (
+                    <button onClick={removeFromBasket}>Remove from Basket</button>
+                )}
                 <p>Quantity in basket: {quantityInBasket}</p>
             </div>
         </div>

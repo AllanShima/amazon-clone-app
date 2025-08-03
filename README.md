@@ -14,6 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+To run the backend app: 
+
+'firebase emulators:start' - in git bash
+
 -----------------------------------------------------
 
 Progress notes:
@@ -74,8 +78,28 @@ Progress notes:
 		- npm install cors
 		- npm install stripe
 		- firebase emulators:start
+		
 - Firebase Database setup
-	- 
+	- Orders.js
+	- Pushing the Order into the database
+	- Error - had to update payment.js database stuff to v9 stuff
+	- npm install moment
+	- Error: had to update index.js (in function) for the secret api. Had to cd inside function and redeploy (firebase deploy --only functions), and execute the backend app;
+	- Error: had to enable Google's Firebase Extensions API (https://console.cloud.google.com/apis/api/firebaseextensions.googleapis.com/metrics?project=clone-a3fa0&inv=1&invt=Ab4XLg) so I can redeploy;
+	- Error: Had to enable another one (https://console.cloud.google.com/marketplace/product/google/cloudbuild.googleapis.com)
+- Orders and Order;
+- Payment page UI;
+- Deploying the functions - In the functions folder - (firebase deploy --only functions) (firebase needs to have the blaze plan. Otherwise itll fail);
+	- Error: Had to alter eslintrc.js in functions folder in order to deploy
+	- Error: The link didn't worked. Had to manually delete and re-doit;
+
+- Taking the url from the functions tab in the console link (https://console.firebase.google.com/project/clone-a3fa0/overview) and pasting in axios.js
+
+- npm run build
+
+- firebase deploy --only hosting (hosting=front, functions=back)
+
+- firebase init -> hosting -> build -> y -> y
 
 -----------------------------------------------------
 
@@ -136,9 +160,12 @@ Hirearchy:
 
 Stripe API Keys: https://dashboard.stripe.com/test/apikeys
 
-Deployed website: https://clone-a3fa0.web.app/
+Deployed front-end app: https://clone-a3fa0.web.app
 
 	- Make sure to build after updates ('npm run build')
 	- And deploy ('firebase deploy')
 
 If you want to use real payments, just go to stripe and disable the test option. And replace the api keys with the new live one provided. (PS: Dont do this)
+
+Stripe's public api key is in App.js
+and Stripe's Secre api key is in index.js (function)

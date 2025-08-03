@@ -10,6 +10,9 @@ import { NumericFormat } from 'react-number-format';
 
 import axios from './axios';
 
+import { db } from './firebase';
+import { collection, doc, setDoc } from 'firebase/firestore';
+
 function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
 
@@ -23,26 +26,28 @@ function Payment() {
     const [error, setError] = useState(null);
     const [disabled, setDisabled] = useState(true);
 
-    const [clientSecret, setClientSecret] = useState(true);
+    const [clientSecret, setClientSecret] = useState(null);
 
-useEffect(() => {
-    // generate the special stripe secret which allows us to charge a customer
-    const getClientSecret = async () => {
-        const total = getBasketTotal(basket) * 100;
-        if (total > 0) {
-            const response = await axios({
-                method: 'post',
-                url: '/payments/create',
-                params: {
-                    total: total
+    useEffect(() => {
+        const getClientSecret = async () => {
+            const total = Math.round(getBasketTotal(basket) * 100);
+            console.log(getBasketTotal(basket))
+            if (total > 0) {
+                try {
+                    const response = await axios({
+                        method: 'post',
+                        url: `/payments/create?total=${total}`, // Send total as a URL query parameter
+                    });
+                    setClientSecret(response.data.clientSecret);
+                } catch (error) {
+                    console.error('Error fetching client secret:', error.response.data);
+                    setError('Could not process payment. Please try again.');
                 }
-            });
-            setClientSecret(response.data.clientSecret);
-        }
-    };
+            }
+        };
 
-    getClientSecret();
-}, [basket]);
+        getClientSecret();
+    }, [basket]);
 
     console.log('The secret is >>> ', clientSecret);
 
@@ -52,12 +57,34 @@ useEffect(() => {
         event.preventDefault();
         setProcessing(true);
 
+        // Check if the clientSecret is a valid string before proceeding
+        if (!stripe || !elements || !clientSecret) {
+            console.error("Stripe.js has not loaded yet, or clientSecret is missing.");
+            console.log("Stripe:", stripe);
+            console.log("Elements:", elements);
+            console.log("Client Secret:", clientSecret);
+            return;
+        }
+
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: elements.getElement(CardElement)
             }
-        }).then(({ paymentIntent }) => {
-            // paymentIntent = payment confirmation
+        }).then(async ({ paymentIntent }) => {
+            // paymentIntent = payment confirmation (object that comes from Stripe API)
+
+            // Firestore logic - refatorado para o Firebase v9+ (modular)
+
+            const userDocRef = doc(db, "users", user?.uid); // Referência do documento do usuário
+            const ordersCollectionRef = collection(userDocRef, "orders"); // Referência para a subcoleção de pedidos
+            const orderDocRef = doc(ordersCollectionRef, paymentIntent.id); // Referência para o pedido específico
+
+            // Writes the data to the databse
+            await setDoc(orderDocRef, {
+                basket: basket,
+                amount: paymentIntent.amount,
+                created: paymentIntent.created,
+            });
 
             setSucceeded(true);
             setError(null)
@@ -111,6 +138,7 @@ useEffect(() => {
                                 image={item.image}
                                 price={item.price}
                                 rating={item.rating}    
+                                amount={item.amount}
                             />
                         ))}
                     </div>
@@ -139,7 +167,7 @@ useEffect(() => {
                                     thousandSeparator={true}
                                     prefix={"$"}
                                 />
-                                <button disabled={processing || disabled || succeeded}>
+                                <button disabled={processing || disabled || succeeded || !clientSecret}>
                                     <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                                 </button>
                             </div>

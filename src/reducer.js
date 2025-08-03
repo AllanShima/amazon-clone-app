@@ -35,19 +35,20 @@ const reducer = (state, action) => {
             if (existingItemIndex > -1) {
                 // Item exists, update its quantity
                 const newBasket = [...state.basket]; // Create a shallow copy of the basket
-                const existingItem = { ...newBasket[existingItemIndex] }; // Create a copy of the item to modify
-                existingItem.amount = action.item.amount; // Update the amount with the new total
-                newBasket[existingItemIndex] = existingItem; // Replace the old item with the updated one
+                newBasket[existingItemIndex] = { 
+                    ...newBasket[existingItemIndex],
+                    amount: newBasket[existingItemIndex].amount + 1 // Increment the existing amount by 1
+                };
 
                 return {
-                ...state,     // Whatever the state originally was
-                basket: newBasket,
+                    ...state,     // Whatever the state originally was
+                    basket: newBasket,
                 };
             } else {
                 // Item does not exist, add it to the basket
                 return {
-                ...state, 
-                basket: [...state.basket, action.item], // Add the new item
+                    ...state, 
+                    basket: [...state.basket, { ...action.item, amount: 1 }], // Add the new item with a starting amount of 1
                 };
             }
         

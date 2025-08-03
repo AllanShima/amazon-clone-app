@@ -14,7 +14,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 // API Public key (no need to hide)
-const promise = loadStripe('pk_test_51RqRudRsy1KxECrWlQRFELVpk6S4z911H9boMiqoFM2lFlxLAHHrzW7y5vQR7GA4NtAbtpg24tz63ykfTLzQ9h6F00mN1oXMdt')
+const promise = loadStripe('pk_test_51RrW8qGbHmEA222PCjwsISeWgjXxITjtkc3JXhLGCiHxvgA1F1qHtH3UtMjMj8jhp39EHJ2D1wGUJFb1IrCnzeJc00WTU021Y7')
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -48,6 +48,7 @@ function App() {
         <Routes>
           <Route path="/orders" element={
             <>
+              <Header />
               <Orders/>
             </>
           } />

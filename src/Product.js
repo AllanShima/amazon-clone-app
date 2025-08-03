@@ -21,7 +21,8 @@ function Product({ id, title, image, price, rating, amount }) {
         image: image,
         price: price,
         rating: rating,
-        amount: quantityInBasket + 1,
+      // You should not pass amount here. The reducer handles the increment.
+      // Simply pass the new item data, and the reducer will set the initial amount to 1.
       },
     });
   };
