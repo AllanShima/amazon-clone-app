@@ -78,7 +78,7 @@ Progress notes:
 		- npm install cors
 		- npm install stripe
 		- firebase emulators:start
-		
+
 - Firebase Database setup
 	- Orders.js
 	- Pushing the Order into the database
@@ -87,8 +87,11 @@ Progress notes:
 	- Error: had to update index.js (in function) for the secret api. Had to cd inside function and redeploy (firebase deploy --only functions), and execute the backend app;
 	- Error: had to enable Google's Firebase Extensions API (https://console.cloud.google.com/apis/api/firebaseextensions.googleapis.com/metrics?project=clone-a3fa0&inv=1&invt=Ab4XLg) so I can redeploy;
 	- Error: Had to enable another one (https://console.cloud.google.com/marketplace/product/google/cloudbuild.googleapis.com)
+
 - Orders and Order;
-- Payment page UI;
+
+- Payment page UI finishes;
+
 - Deploying the functions - In the functions folder - (firebase deploy --only functions) (firebase needs to have the blaze plan. Otherwise itll fail);
 	- Error: Had to alter eslintrc.js in functions folder in order to deploy
 	- Error: The link didn't worked. Had to manually delete and re-doit;
