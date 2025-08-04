@@ -27,4 +27,5 @@ yarn-error.log*
 ./src/firebase.js # Ignore firebase config file
 ./src/App.js
 ./src/index.js
+# Must add
 firebase-debug.log
