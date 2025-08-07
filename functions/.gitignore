@@ -1,4 +1,3 @@
 node_modules/
 *.local
-
-./index.js # Ignore the API Secret key file
+.env

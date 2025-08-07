@@ -32,6 +32,11 @@ function Home() {
     setSlideIndex(newIndex);
   };
 
+  useEffect(() => {
+    // Reset slide index to 1 when component mounts
+    setSlideIndex(1);
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className='home'>

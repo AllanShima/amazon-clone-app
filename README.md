@@ -1,3 +1,6 @@
+# Amazon-Clone E-commerce Full-Stack project
+## Using Firebase and Stripe
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -98,10 +101,9 @@ Progress notes:
 
 - Taking the url from the functions tab in the console link (https://console.firebase.google.com/project/clone-a3fa0/overview) and pasting in axios.js
 
-- npm run build
+- 'npm run build'
 
-- firebase deploy --only hosting (hosting=front, functions=back)
-
+- 'firebase deploy --only hosting' (hosting=front, functions=back)
 - firebase init -> hosting -> build -> y -> y
 
 -----------------------------------------------------
@@ -170,5 +172,14 @@ Deployed front-end app: https://clone-a3fa0.web.app
 
 If you want to use real payments, just go to stripe and disable the test option. And replace the api keys with the new live one provided. (PS: Dont do this)
 
-Stripe's public api key is in App.js
-and Stripe's Secre api key is in index.js (function)
+Stripe's keys locations on the app:
+- Stripe's public api key is in App.js;
+- and Stripe's Secre api key is in index.js (function).
+
+---
+
+Initialization:
+
+For testing:
+	- npm start (front);
+	- firebase emulators:start (back)

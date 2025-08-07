@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from "./firebase";
@@ -36,6 +36,10 @@ function Login() {
         })
         .catch(error => alert(error.message))
     }
+
+    useEffect(() => {  
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className='login'>

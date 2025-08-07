@@ -16,7 +16,7 @@ import { collection, doc, setDoc } from 'firebase/firestore';
 function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // used to be able to programmatically change the url (was called useHistory)
 
     const stripe = useStripe();
     const elements = useElements();
@@ -48,6 +48,10 @@ function Payment() {
 
         getClientSecret();
     }, [basket]);
+
+    useEffect(() => {  
+        window.scrollTo(0, 0);
+    }, []);
 
     console.log('The secret is >>> ', clientSecret);
 
