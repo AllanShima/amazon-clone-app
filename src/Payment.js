@@ -36,7 +36,7 @@ function Payment() {
                 try {
                     const response = await axios({
                         method: 'post',
-                        url: `/payments/create?total=${total}`, // Send total as a URL query parameter
+                        url: `/payments/create?total=${total}`, // Send total as a URL query parameter (Not safe but ok for this project)
                     });
                     setClientSecret(response.data.clientSecret);
                 } catch (error) {

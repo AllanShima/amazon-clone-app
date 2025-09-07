@@ -69,12 +69,12 @@ Progress notes:
 	- Stripe setup
 		- npm install @stripe/stripe-js
 		- npm install @stripe/react-stripe-js
-		- Upgrading the firebase's plan to blaze
+		- Upgrading the firebase's plan to blaze: **for the ability for Firebase's Cloud Functions to make outbound network requests to non-Google services.**
 		- Creating a Stripe account and getting the api publishable key (stripe.com)
 	- CardElement code;
 	- Installing axios (npm install axios): popular fetching library. Its more easier than js fetch api
 	- Backend Cloud Functions ()
-		- firebase init -> Functions -> Js -> Eslint (yes) -> dependencies (yes)
+		- 'firebase init functions' -> Js -> Eslint (yes) -> dependencies (yes)
 		- cd functions
 		- npm install express
 		- index.js
@@ -180,6 +180,13 @@ Stripe's keys locations on the app:
 
 Initialization:
 
+Deployed Website (has to be updated with changes):  https://clone-a3fa0.web.app
+
 For testing:
 	- npm start (front);
 	- firebase emulators:start (back)
+
+After Changes:
+	- Make sure to build after updates ('npm run build')
+	- And deploy ('firebase deploy')
+		- For lint error: "npm run lint -- --fix" (cd functions)
