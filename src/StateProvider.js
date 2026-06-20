@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 
-// Prepares the dataLayer
+// Prepares the dataLayer (creates the portal with the data)
 export const StateContext = createContext();
 
 // Wrap our app and provide the Data Layer
