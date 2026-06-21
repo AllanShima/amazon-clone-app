@@ -1,15 +1,65 @@
-# Amazon-Clone E-commerce Full-Stack project
-## Using Firebase and Stripe
+# Amazon-Clone E-commerce Full-Stack Project
+> Projeto full-stack usando Firebase como backend, e Stripe para pagamentos
 
-# Getting Started with Create React App
+## Preview
+- Home page
+<img width="1919" height="866" alt="image" src="https://github.com/user-attachments/assets/8f1d2937-3814-42d1-90c0-754c012a7e48" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Checkout page
+<img width="1919" height="869" alt="image" src="https://github.com/user-attachments/assets/ef786678-1a0e-4bcb-855a-d7606f564017" />
+
+- Orders page
+<img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/48f67bcc-7c19-4e9c-ac1c-fff27af210eb" />
+
+#### Período de desenvolvimento do projeto: 01/07/2025 - 31/07/2025 (1 mês)
+
+#### Template do projeto: [Create React App](https://github.com/facebook/create-react-app).
+
+## Tabela de Conteúdo
+
+
+## Tecnologias Principais
+- React, Javascript + NodeJs;
+- Css;
+- Firebase (Auth, Firestore, Functions);
+- Stripe
+
+## Scripts Disponíveis
+No diretório do projeto, você pode executar:
+
+`npm start`
+
+Executa o aplicativo no modo de desenvolvimento.
+Abra http://localhost:3000 para visualizá-lo no seu navegador.
+
+A página será recarregada automaticamente quando você fizer alterações.
+
+Você também poderá ver eventuais erros de lint (análise de código) no console.
+
+Para executar o aplicativo do backend:
+
+firebase emulators:start - para simular localmente
+ou
+firebase deploy --only functions - para usar a aplicação real (em produção)
+
+---
+
+#### Period of Development: 01/07/2025 - 31/07/2025 (1 month)
+
+#### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Table of Contents
+
+## Tech Stack
+- React, Javascript + NodeJs;
+- Css;
+- Firebase (Auth, Firestore, Functions);
+- Stripe
 
 ## Available Scripts
-
 In the project directory, you can run:
 
-### `npm start`
+`npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -19,12 +69,15 @@ You may also see any lint errors in the console.
 
 To run the backend app: 
 
-'firebase emulators:start' - in git bash
+'firebase emulators:start' - to simulate
+or
+'firebase deploy --only functions' - to use the real app
 
------------------------------------------------------
+---
 
-Progress notes:
+## Anotações/Notes
 
+### Progress
 - firebase Setup;
 
 - installing the react template;
@@ -106,9 +159,7 @@ Progress notes:
 - 'firebase deploy --only hosting' (hosting=front, functions=back)
 - firebase init -> hosting -> build -> y -> y
 
------------------------------------------------------
-
-Stuff:
+#### Concepts & Observations/Conceitos e Observações:
 - BEM Convention?
 - Props in React
 - React Router DOM
@@ -170,7 +221,7 @@ Deployed front-end app: https://clone-a3fa0.web.app
 	- Make sure to build after updates ('npm run build')
 	- And deploy ('firebase deploy')
 
-If you want to use real payments, just go to stripe and disable the test option. And replace the api keys with the new live one provided. (PS: Dont do this)
+To use real payments, just go to stripe and disable the test option. And replace the api keys with the new live one provided. (PS: Dont do this)
 
 Stripe's keys locations on the app:
 - Stripe's public api key is in App.js;
