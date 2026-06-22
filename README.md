@@ -11,12 +11,13 @@
 - Orders page
 <img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/48f67bcc-7c19-4e9c-ac1c-fff27af210eb" />
 
+## Tabela de Conteúdo (Pt-Br)
+- [Tecnologias Principais](#tecnologias-principais)
+- [Scripts Disponíveis](#scripts-disponíveis)
+
 #### Período de desenvolvimento do projeto: 01/07/2025 - 31/07/2025 (1 mês)
 
 #### Template do projeto: [Create React App](https://github.com/facebook/create-react-app).
-
-## Tabela de Conteúdo
-
 
 ## Tecnologias Principais
 - React, Javascript + NodeJs;
@@ -42,13 +43,17 @@ firebase emulators:start - para simular localmente
 ou
 firebase deploy --only functions - para usar a aplicação real (em produção)
 
+OBS: para testar o pagamento, preencha com números 424242... consecultivos.
+
 ---
+
+## Table of Contents (en-us)
+- [Tech Stack](#tech-stack)
+- [Available Scripts](#available-scripts)
 
 #### Period of Development: 01/07/2025 - 31/07/2025 (1 month)
 
 #### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Table of Contents
 
 ## Tech Stack
 - React, Javascript + NodeJs;
@@ -72,6 +77,8 @@ To run the backend app:
 'firebase emulators:start' - to simulate
 or
 'firebase deploy --only functions' - to use the real app
+
+OBS: In order to test the payment, fill the card details with 424242...
 
 ---
 
